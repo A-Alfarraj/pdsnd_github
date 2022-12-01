@@ -10,10 +10,12 @@ Replace the Project Title
 Describe what your project is about and what it does
 
 ### Files used
-Include the files used
+Include the files used, and use proper naming
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
 
 ### Commits
 Make proper naming for the commited message 
+
+### 
