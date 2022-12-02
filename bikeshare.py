@@ -168,7 +168,7 @@ def user_stats(df):
     # TO DO: Display counts of gender
     if 'Gender' in df:
         print('counts of gender:\n', df['Gender'].value_counts())
-
+        print('Most common gender: ', df['Gender'].value_counts().idxmax())
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
         print("Most common year of birth: ",int(df['Birth Year'].value_counts().idxmax()))
