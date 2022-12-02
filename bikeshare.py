@@ -161,10 +161,10 @@ def user_stats(df):
 
     # TO DO: Display counts of user types
     print('counts of user types:\n' ,df['User Type'].value_counts())
-
+    print('Most common user type: ', df['User Type'].value_counts().idxmax())
     # Counting total of users
     print('counts of users:\n' ,df.iloc[:, :1].count())
-
+    
     # TO DO: Display counts of gender
     if 'Gender' in df:
         print('counts of gender:\n', df['Gender'].value_counts())
