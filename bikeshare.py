@@ -2,9 +2,9 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = { 'chicago': '.CSV/chicago.csv',
+              'new york city': '.CSV/new_york_city.csv',
+              'washington': '.CSV/washington.csv' }
 
 def get_filters():
     """
@@ -149,6 +149,9 @@ def trip_duration_stats(df):
     # TO DO: display mean travel time
     print('mean travel time' ,df['Trip Duration'].mean())
 
+    # Display median travel time
+    print('median travel time' ,df['Trip Duration'].median())
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -161,11 +164,14 @@ def user_stats(df):
 
     # TO DO: Display counts of user types
     print('counts of user types:\n' ,df['User Type'].value_counts())
-
+    print('Most common user type: ', df['User Type'].value_counts().idxmax())
+    # Counting total of users
+    print('counts of users:\n' ,df.iloc[:, :1].count())
+    
     # TO DO: Display counts of gender
     if 'Gender' in df:
         print('counts of gender:\n', df['Gender'].value_counts())
-
+        print('Most common gender: ', df['Gender'].value_counts().idxmax())
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
         print("Most common year of birth: ",int(df['Birth Year'].value_counts().idxmax()))
@@ -192,7 +198,11 @@ def Display(df):
     elif view_data == 'no':
          return
     
-    
+
+
+
+
+
 def main():
     while True:
         city, month, day = get_filters()
